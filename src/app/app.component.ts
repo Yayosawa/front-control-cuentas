@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front-control-cuentas';
+
+  logOut(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
+  }
 }

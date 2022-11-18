@@ -1,0 +1,14 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Monto</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of lTransfers">
+      <td>{{t.contact_name}}</td>
+      <td>{{t.amount}}</td>
+    </tr>
+  </tbody>
+</table>

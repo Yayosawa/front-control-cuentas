@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card">
+      <div class="card-header">
+        Crear Nuevo Destinatario
+      </div>
+      <div class="card-body">
+        <form (submit)="createContact()">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="contact.nombre" name="name" class="form-control" placeholder="Nombre" required autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" [(ngModel)]="contact.correo" name="email" class="form-control" placeholder="Email" required autofocus>
+          </div> 
+          <div class="form-group">
+            <input type="text" [(ngModel)]="contact.rut" name="rut" class="form-control" placeholder="Rut" required autofocus>
+          </div> 
+          <div class="form-group">
+            <input type="text" [(ngModel)]="contact.telefono" name="telefono" class="form-control" placeholder="Telefono" required autofocus>
+          </div> 
+
+          <div class="form-group">
+            <select (change)="onCuentaChange($event.target)"  class="form-control" aria-label="cuentas">
+              <option *ngFor="let cuenta of lCuentas" value="{{cuenta.id}}" >
+                  {{cuenta.des}}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <select (change)="onBancoChange($event.target)"  class="form-control" aria-label="bancos">
+              <option *ngFor="let banco of lBancos" value="{{banco.id}}" >
+                  {{banco.nombre}}
+              </option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Confirmar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
